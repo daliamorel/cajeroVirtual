@@ -1,4 +1,5 @@
 var saldo = 5000
+var seguir
 
 alert("Bienvenido a su cajero virtual. Pulse aceptar para continuar")
 
@@ -9,7 +10,8 @@ do {
         case 1: /*Depósito*/
             deposito = Number(prompt("Ingrese el monto que desea depositar"))
             saldo = saldo + deposito
-            alert("Depósito realizado con éxito. Su saldo actual es de: $" + saldo)        
+            alert("Depósito realizado con éxito. Su saldo actual es de: $" + saldo)   
+            seguir = confirm("¿Desea seguir operando?")
             break;
 
         case 2: /*Extracción*/
@@ -20,11 +22,16 @@ do {
             } else {
                 alert("Saldo insuficiente")
             }
+            seguir = confirm("¿Desea seguir operando?")
             break;       
             
 
         case 3: /*Consultar saldo*/
             alert("Su saldo actual es de: $" + saldo)
+            seguir = confirm("¿Desea seguir operando?")
+            break;
+
+        case 4: /*Finalizar*/
             break;
     
         default:
@@ -32,6 +39,6 @@ do {
             break;
     }
     
-} while (confirm("¿Desea seguir operando?"));
+} while (seguir);
 
 alert("Muchas gracias por utilizar su cajero virtual. Que tenga un buen día!")
